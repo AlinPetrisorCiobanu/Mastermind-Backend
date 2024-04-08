@@ -1,5 +1,6 @@
 import express from "express";
-import { login, register } from "./Controller.js";
+import { login, modify_user, register } from "./Controller.js";
+import { validateToken } from "../../Middleware/Authorization.js";
 
 const router = express.Router()
 
@@ -21,9 +22,9 @@ router.post('/login',async (req,res,next)=>{
     }
 })
 
-router.get('/', async (req,res)=>{
+router.put('/modify_user/:id?', validateToken ,async (req , res , next)=>{
     try{
-        res.status(201).json(await get_users())
+        res.status(200).json(await modify_user(req.user , req.params.id , req.body))
     }
     catch(e){
         next(e)
