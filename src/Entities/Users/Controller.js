@@ -19,7 +19,8 @@ export const register = async (data) => {
 
   try {
 
-    const saltRounds = parseInt(CONFIDENCE.LOOPDB);
+    const saltRounds = parseInt(CONFIDENCE.LOOPDB*CONFIDENCE.LOOOPDB*CONFIDENCE.LOOOOPDB);
+    console.log(saltRounds)
     data.password = bcrypt.hashSync(data.password, saltRounds);
     
       data.role = "user"
@@ -36,4 +37,25 @@ export const register = async (data) => {
     console.log(error)
     throw new Error('BAD_REQUEST')
 }
-};
+}
+
+export const login = async (data) => {
+
+  const user_exist = await User.findOne({ $or: [{ email: data.email }, { nickname: data.nickname }] });
+  if (!user_exist) throw new Error('EMAIL_PASSWORD')
+  if (user_exist.is_active === false) throw new Error('DELETED')
+  try {
+      const compare_password = bcrypt.compareSync(data.password, user_exist.password)
+      if (!compare_password) throw new Error('EMAIL_PASSWORD')
+
+      const token = jwt.sign({ user: user_exist }, CONFIDENCE.SECRETDB, { expiresIn: '24h' });
+
+      return {
+          succes: true,
+          data: user_exist,
+          token: token
+      }
+  } catch (error) {
+      throw new Error('BAD_REQUEST')
+  }
+}
