@@ -140,5 +140,37 @@ export const modify_user = async (data_token, id, data) => {
     console.log(err)
       throw new Error('BAD_REQUEST')
   }
-};
+}
 
+export const delete_user = async (data_token, id) => {
+
+  const user_token = data_token.user
+
+  if (user_token === undefined) throw new Error('INVALID_CREDENTIALS')
+  if (user_token.is_active === false) throw new Error('DELETED')
+
+  if (user_token.role === "user" || user_token.role === "rider") { id = user_token._id }
+  if (!id) { id = user_token._id }
+
+
+
+  try {
+      const user_to_delete = await User.findById(id)
+      if (user_to_delete) {
+          user_to_delete.is_active = false
+          await user_to_delete.save();
+          return {
+              success: true,
+              message: "Usuario borrado",
+          };
+      } else {
+          return {
+              success: false,
+              message: "No hay usuario para borrar",
+          };
+      }
+
+  } catch (err) {
+      throw new Error('BAD_REQUEST')
+  }
+}
