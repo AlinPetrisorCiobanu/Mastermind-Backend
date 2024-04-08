@@ -15,7 +15,7 @@ export const UserSchema = new Schema({
         },
     date: {
         type : String,
-        require : true,
+        
         },
     phone: {
         type : Number,

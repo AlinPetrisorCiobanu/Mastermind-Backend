@@ -1,5 +1,8 @@
 import { validateEmail, validatePassword } from "../../Utils/Validator.js";
 import User from "./Modelo.js";
+import CONFIDENCE from "../../Config/Config_Conexion.js";
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 export const register = async (data) => {
  
@@ -16,7 +19,9 @@ export const register = async (data) => {
 
   try {
 
-      data.password = await bcrypt.hash(data.password, CONFIDENCE.LOOPDB)
+    const saltRounds = parseInt(CONFIDENCE.LOOPDB);
+    data.password = bcrypt.hashSync(data.password, saltRounds);
+    
       data.role = "user"
       data.is_active = true
       data.confirmed = false
@@ -28,6 +33,7 @@ export const register = async (data) => {
       message: "Gracias por Registrarte",
     };
   } catch (error) {
-    return error.message;
+    console.log(error)
+    throw new Error('BAD_REQUEST')
 }
 };

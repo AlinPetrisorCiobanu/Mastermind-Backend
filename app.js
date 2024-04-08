@@ -1,6 +1,7 @@
 import express from "express";
 import router from "./src/Entities/Users/Router.js";
 import conectionDB from "./src/Database/Database.js"; 
+import errorHandler from "./src/Middleware/Middleware.js";
 
 
 const app = express()
@@ -20,5 +21,7 @@ app.listen(PORT, () => {
 })
 
 conectionDB();
+
+app.use(errorHandler)
 
 export default app;
