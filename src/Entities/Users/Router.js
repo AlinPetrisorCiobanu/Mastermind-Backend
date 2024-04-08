@@ -21,4 +21,13 @@ router.post('/login',async (req,res,next)=>{
     }
 })
 
+router.get('/', async (req,res)=>{
+    try{
+        res.status(201).json(await get_users())
+    }
+    catch(e){
+        next(e)
+    }
+})
+
 export default router

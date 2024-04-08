@@ -51,12 +51,12 @@ export const UserSchema = new Schema({
         type:Boolean,
         default : false
     },
-    confirmed:{
+    score:{
         type:Number,
         default : 0
     },
 },{versionkey:true,timestamps:true});
 
-const User = model('User' , UserSchema)
+const User = model('Users' , UserSchema)
 
 export default User;
