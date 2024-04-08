@@ -227,7 +227,7 @@ export const list_users = async (data_token , page_params ) => {
 
   if (user_token.is_active === false) throw new Error('DELETED')
 
-  if (user_token.role === "users" ) throw new Error('UNAUTHORIZATION')
+  if (user_token.role === "user" ) throw new Error('UNAUTHORIZATION')
 
 
   try {
