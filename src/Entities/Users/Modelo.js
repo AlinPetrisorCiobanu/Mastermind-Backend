@@ -1,4 +1,5 @@
 import {model,Schema} from "mongoose";
+import mongoosePaginate from "mongoose-paginate-v2";
 
 export const UserSchema = new Schema({
     name : {
@@ -56,6 +57,8 @@ export const UserSchema = new Schema({
         default : 0
     },
 },{versionkey:true,timestamps:true});
+
+UserSchema.plugin(mongoosePaginate);
 
 const User = model('Users' , UserSchema)
 

@@ -174,3 +174,84 @@ export const delete_user = async (data_token, id) => {
       throw new Error('BAD_REQUEST')
   }
 }
+
+export const data_user = async (data_token , id ) => {
+  const user_token = data_token.user
+  let user;
+
+  if (user_token === undefined) throw new Error('INVALID_CREDENTIALS')
+  if (user_token.is_active === false) throw new Error('DELETED')
+
+  try {
+      if (!id) {
+          user = await User.findById(user_token._id)
+      } else {
+          if (user_token.role === "user" || user_token.role === "rider") { id = user_token._id }
+          user = await User.findById(id)
+      }
+
+      try {
+          if (user) {
+              return {
+                  success: true,
+                  message: "Usuario",
+                  data: user
+              };
+          } else {
+              return {
+                  success: false,
+                  message: "No hay usuario para mostrar",
+              };
+          }
+
+      } catch (err) {
+          throw new Error('BAD_REQUEST')
+      }
+  } catch {
+      throw new Error('NOT_FOUND')
+  }
+}
+
+export const list_users = async (data_token , page_params ) => {
+  const user_token = data_token.user
+
+  let page = page_params ? parseFloat(page_params) : 1
+  const pageSize = 2;
+
+  const options = {
+      page,
+      limit: pageSize
+  };
+
+  if (user_token === undefined) throw new Error('INVALID_CREDENTIALS')
+
+  if (user_token.is_active === false) throw new Error('DELETED')
+
+  if (user_token.role === "users" ) throw new Error('UNAUTHORIZATION')
+
+
+  try {
+
+      let users = await User.paginate({}, options)
+
+      if (page > users.totalPages) {
+          options.page = 1;
+          users = await User.paginate({}, options)
+      }
+
+      if (users.docs.length > 0) {
+          return {
+              success: true,
+              message: "Usuario",
+              data: users
+          };
+      } else {
+          return {
+              success: false,
+              message: "No hay usuario para mostrar",
+          };
+      }
+  } catch {
+      throw new Error('NOT_FOUND')
+  }
+}
