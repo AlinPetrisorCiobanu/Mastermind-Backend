@@ -15,7 +15,7 @@ export const register = async (data) => {
   if (phone_exist || email_exist || nickname_exist) throw new Error('ALLREADY_EXIST')
 
   if (!validateEmail(data.email)) throw new Error('INVALID_CREDENTIALS_EMAIL')
-  if (!validatePassword(data.password)) throw new Error('INVALID_CREDENTIALS_PASSWORD')
+//   if (!validatePassword(data.password)) throw new Error('INVALID_CREDENTIALS_PASSWORD')
 
   try {
 
@@ -25,6 +25,8 @@ export const register = async (data) => {
       data.role = "user"
       data.is_active = true
       data.confirmed = false
+      data.MasterPoints = 0
+      data.isSeeded = false
 
     await new User(data).save()
 

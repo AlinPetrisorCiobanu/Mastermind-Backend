@@ -2,7 +2,8 @@ import express from "express";
 import router from "./src/Entities/Users/Router.js";
 import conectionDB from "./src/Database/Database.js"; 
 import errorHandler from "./src/Middleware/Middleware.js";
-import seedUsers from "./userSeeders.js";
+import seedUsers from "./src/Seeders/userSeeders.js";
+import clearSeedData from "./src/Seeders/clearSeeders.js";
 
 
 const app = express()
@@ -22,6 +23,7 @@ app.listen(PORT, () => {
 })
 
 // seedUsers();
+// clearSeedData();
 
 conectionDB();
 

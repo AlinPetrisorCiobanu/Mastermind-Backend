@@ -1,4 +1,4 @@
-import User from "./src/Entities/Users/Modelo.js";
+import User from "../Entities/Users/Modelo.js";
 import faker from "faker";
 
 const seedUsers = async () => {
@@ -14,6 +14,7 @@ const seedUsers = async () => {
                 email: faker.internet.email(),
                 nickname: faker.internet.userName(),
                 password: faker.internet.password(),
+                isSeeded: true ,
               };
 
               await User.create(userData);

@@ -1,5 +1,6 @@
 import {model,Schema} from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
+import { type } from "os";
 
 export const UserSchema = new Schema({
     name : {
@@ -56,6 +57,10 @@ export const UserSchema = new Schema({
         type:Number,
         default : 0
     },
+    isSeeded:{
+        type:Boolean,
+        default:false
+    }
 },{versionkey:true,timestamps:true});
 
 UserSchema.plugin(mongoosePaginate);
