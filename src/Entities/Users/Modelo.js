@@ -52,7 +52,7 @@ export const UserSchema = new Schema({
         type:Boolean,
         default : false
     },
-    score:{
+    MasterPoints:{
         type:Number,
         default : 0
     },

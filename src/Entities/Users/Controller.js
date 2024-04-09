@@ -33,7 +33,6 @@ export const register = async (data) => {
       message: "Gracias por Registrarte",
     };
   } catch (error) {
-    console.log(error)
     throw new Error('BAD_REQUEST')
 }
 }
@@ -174,7 +173,7 @@ export const delete_user = async (data_token, id) => {
   }
 }
 
-export const score_user = async (data_token, id , score) => {
+export const score_user = async (data_token, id , masterPoints) => {
 
   const user_token = data_token.user
 
@@ -187,7 +186,7 @@ export const score_user = async (data_token, id , score) => {
   try {
       const user_score = await User.findById(id)
       if (user_score) {
-          user_score.score = parseInt(user_score.score)+parseInt(score.score);
+          user_score.MasterPoints = parseInt(user_score.MasterPoints)+parseInt(masterPoints.score);
           await user_score.save();
           return {
               success: true,

@@ -2,6 +2,7 @@ import express from "express";
 import router from "./src/Entities/Users/Router.js";
 import conectionDB from "./src/Database/Database.js"; 
 import errorHandler from "./src/Middleware/Middleware.js";
+import seedUsers from "./userSeeders.js";
 
 
 const app = express()
@@ -19,6 +20,8 @@ app.use('/', router)
 app.listen(PORT, () => {
     console.log("Servidor Levantado")
 })
+
+// seedUsers();
 
 conectionDB();
 
