@@ -1,5 +1,5 @@
 import express from "express";
-import { data_user, delete_user, list_users, login, modify_user, register } from "./Controller.js";
+import { data_user, delete_user, list_users, login, modify_user, register, score_user } from "./Controller.js";
 import { validateToken } from "../../Middleware/Authorization.js";
 
 const router = express.Router()
@@ -34,6 +34,15 @@ router.put('/modify_user/:id?', validateToken ,async (req , res , next)=>{
 router.put('/delete_user/:id?', validateToken ,async (req , res , next)=>{
     try{
         res.status(200).json(await delete_user(req.user , req.params.id ))
+    }
+    catch(e){
+        next(e)
+    }
+})
+
+router.put('/score_user/:id?', validateToken ,async (req , res , next)=>{
+    try{
+        res.status(200).json(await score_user(req.user , req.params.id , req.body))
     }
     catch(e){
         next(e)

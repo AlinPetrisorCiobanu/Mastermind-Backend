@@ -20,7 +20,6 @@ export const register = async (data) => {
   try {
 
     const saltRounds = parseInt(CONFIDENCE.LOOPDB*CONFIDENCE.LOOOPDB*CONFIDENCE.LOOOOPDB);
-    console.log(saltRounds)
     data.password = bcrypt.hashSync(data.password, saltRounds);
     
       data.role = "user"
@@ -149,7 +148,7 @@ export const delete_user = async (data_token, id) => {
   if (user_token === undefined) throw new Error('INVALID_CREDENTIALS')
   if (user_token.is_active === false) throw new Error('DELETED')
 
-  if (user_token.role === "user" || user_token.role === "rider") { id = user_token._id }
+  if (user_token.role === "user") { id = user_token._id }
   if (!id) { id = user_token._id }
 
 
@@ -162,6 +161,37 @@ export const delete_user = async (data_token, id) => {
           return {
               success: true,
               message: "Usuario borrado",
+          };
+      } else {
+          return {
+              success: false,
+              message: "No hay usuario para borrar",
+          };
+      }
+
+  } catch (err) {
+      throw new Error('BAD_REQUEST')
+  }
+}
+
+export const score_user = async (data_token, id , score) => {
+
+  const user_token = data_token.user
+
+  if (user_token === undefined) throw new Error('INVALID_CREDENTIALS')
+  if (user_token.is_active === false) throw new Error('DELETED')
+
+  if (user_token.role === "user") { id = user_token._id }
+  if (!id) { id = user_token._id }
+
+  try {
+      const user_score = await User.findById(id)
+      if (user_score) {
+          user_score.score = parseInt(user_score.score)+parseInt(score.score);
+          await user_score.save();
+          return {
+              success: true,
+              message: "Nuevo Record",
           };
       } else {
           return {
@@ -216,7 +246,7 @@ export const list_users = async (data_token , page_params ) => {
   const user_token = data_token.user
 
   let page = page_params ? parseFloat(page_params) : 1
-  const pageSize = 2;
+  const pageSize = 1;
 
   const options = {
       page,
