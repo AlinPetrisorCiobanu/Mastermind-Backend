@@ -18,35 +18,57 @@ Esta API gestiona la información basica de los usuarios del juego MasterMind , 
 
 <h1 id=#2>Tecnologías-Bibliotecas-Herramientas</h1>
 
-![Node.js](./src/img/node.png)
-Node.js
+<p>
+  <img src="./src/img/node.png" alt="Node.js" width="200px"><br>
+  Node.js
+</p>
 
-![Express.js](./src/img/express.png)
-Express.js
+<p>
+  <img src="./src/img/express.png" alt="Express.js" width="200px"><br>
+  Express.js
+</p>
 
-![MongoDB](./src/img/mongodb.png)
-MongoDB
+<p>
+  <img src="./src/img/mongodb.png" alt="MongoDB" width="200px"><br>
+  MongoDB
+</p>
 
-![Mongoose](./src/img/mongoose.png)
-Mongoose
+<p>
+  <img src="./src/img/mongoose.png" alt="Mongoose" width="200px"><br>
+  Mongoose
+</p>
 
-![JsonWebToken](./src/img/jwt.png)
-JsonWebToken
+<p>
+  <img src="./src/img/jwt.png" alt="JsonWebToken" width="200px"><br>
+  JsonWebToken
+</p>
 
-![BCrypt](./src/img/bcrypt.jpg)
-BCrypt
+<p>
+  <img src="./src/img/bcrypt.jpg" alt="BCrypt" width="200px"><br>
+  BCrypt
+</p>
 
-![Faker](./src/img/faker.jpg)
-Faker
+<p>
+  <img src="./src/img/faker.jpg" alt="Faker" width="200px"><br>
+  Faker
+</p>
 
-![Postman](./src/img/postman.png)
-Postman
+<p>
+  <img src="./src/img/postman.png" alt="Postman" width="200px"><br>
+  Postman
+</p>
 
-![Vercel](./src/img/vercel.png)
-Vercel
+<p>
+  <img src="./src/img/vercel.png" alt="Vercel" width="200px"><br>
+  Vercel
+</p>
 
-![Visual Studio Code](./src/img/vsc.png)
-Visual Studio Code
+<p>
+  <img src="./src/img/vsc.png" alt="Visual Studio Code" width="200px"><br>
+  Visual Studio Code
+</p>
 
-![Git Lab](./src/img/git.png)
-Git Lab
+<p>
+  <img src="./src/img/git.png" alt="Git Lab" width="200px"><br>
+  Git Lab
+</p>
