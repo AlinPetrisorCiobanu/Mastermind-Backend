@@ -40,7 +40,7 @@ router.put('/delete_user/:id?', validateToken ,async (req , res , next)=>{
     }
 })
 
-router.put('/score_user/:id?', validateToken ,async (req , res , next)=>{
+router.put('/master_points_user/:id?', validateToken ,async (req , res , next)=>{
     try{
         res.status(200).json(await score_user(req.user , req.params.id , req.body))
     }
