@@ -28,13 +28,20 @@ Esta API gestiona la información básica de los usuarios del juego MasterMind. 
 Aquí se incluyen las tecnologías, bibliotecas y herramientas utilizadas en el proyecto.
 
 
-| <img src="./src/img/node.png" alt="Node.js" width="200px"> | <img src="./src/img/express.png" alt="Express.js" width="200px"> | <img src="./src/img/mongodb.png" alt="MongoDB" width="200px"> | <img src="./src/img/mongoose.png" alt="Mongoose" width="200px"> | <img src="./src/img/jwt.png" alt="JsonWebToken" width="200px"> |
-|:---:|:---:|:---:|:---:|:---:|
-| Node.js | Express.js | MongoDB | Mongoose | JsonWebToken |
+| <img src="./src/img/node.png" alt="Node.js" width="150px" align="center"> | <img src="./src/img/express.png" alt="Express.js" width="150px" align="center"> | <img src="./src/img/mongodb.png" alt="MongoDB" width="150px" align="center"> | <img src="./src/img/mongoose.png" alt="Mongoose" width="150px" align="center"> |
+|:---:|:---:|:---:|:---:|
+| Node.js | Express.js | MongoDB | Mongoose |
 
-| <img src="./src/img/bcrypt.jpg" alt="BCrypt" width="200px"> | <img src="./src/img/faker.jpg" alt="Faker" width="200px"> | <img src="./src/img/postman.png" alt="Postman" width="200px"> | <img src="./src/img/vercel.png" alt="Vercel" width="200px"> | <img src="./src/img/vsc.png" alt="Visual Studio Code" width="200px"> | <img src="./src/img/git.png" alt="Git Lab" width="200px"> |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| BCrypt | Faker | Postman | Vercel | Visual Studio Code | Git Lab |
+| <img src="./src/img/jwt.png" alt="JsonWebToken" width="150px" align="center"> | <img src="./src/img/bcrypt.jpg" alt="BCrypt" width="150px" align="center"> | <img src="./src/img/faker.jpg" alt="Faker" width="150px" align="center"> | <img src="./src/img/postman.png" alt="Postman" width="150px" align="center"> |
+|:---:|:---:|:---:|:---:|
+| JsonWebToken | BCrypt | Faker | Postman |
+
+| <img src="./src/img/vercel.png" alt="Vercel" width="150px" align="center"> | <img src="./src/img/vsc.png" alt="Visual Studio Code" width="150px" align="center"> | <img src="./src/img/git.png" alt="Git Lab" width="150px" align="center"> |
+|:---:|:---:|:---:|
+| Vercel | Visual Studio Code | Git Lab |
+
+
+
 
 <br>
 <br>
