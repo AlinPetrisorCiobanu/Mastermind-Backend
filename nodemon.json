@@ -1,4 +1,4 @@
 {
     "ext": "js,json",
-    "exec": "node ./app.js"
+    "exec": "node ./index.js"
   }
