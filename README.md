@@ -28,17 +28,65 @@ Esta API gestiona la información básica de los usuarios del juego MasterMind. 
 Aquí se incluyen las tecnologías, bibliotecas y herramientas utilizadas en el proyecto.
 
 
-| <img src="./src/img/node.png" alt="Node.js" width="150px" align="center"> | <img src="./src/img/express.png" alt="Express.js" width="150px" align="center"> | <img src="./src/img/mongodb.png" alt="MongoDB" width="150px" align="center"> | <img src="./src/img/mongoose.png" alt="Mongoose" width="150px" align="center"> |
-|:---:|:---:|:---:|:---:|
-| Node.js | Express.js | MongoDB | Mongoose |
+<table style="width:100%; border-collapse: collapse;">
+  <tr>
+    <td style="text-align:center; border: none;"><img src="./src/img/node.png" alt="Node.js" width="100px"></td>
+    <td style="text-align:center; border: none;"><img src="./src/img/express.png" alt="Express.js" width="100px"></td>
+    <td style="text-align:center; border: none;"><img src="./src/img/mongodb.png" alt="MongoDB" width="70px"></td>
+    <td style="text-align:center; border: none;"><img src="./src/img/mongoose.png" alt="Mongoose" width="100px"></td>
+    <td style="text-align:center; border: none;"><img src="./src/img/jwt.png" alt="JsonWebToken" width="70px"></td>
+  </tr>
+  <tr>
+    <td style="text-align:center; border: none;">Node.js</td>
+    <td style="text-align:center; border: none;">Express.js</td>
+    <td style="text-align:center; border: none;">MongoDB</td>
+    <td style="text-align:center; border: none;">Mongoose</td>
+    <td style="text-align:center; border: none;">JsonWebToken</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="text-align:center; border: none;"><img src="./src/img/bcrypt.jpg" alt="BCrypt" width="100px"></td>
+    <td style="text-align:center; border: none;"><img src="./src/img/faker.jpg" alt="Faker" width="50px"></td>
+    <td style="text-align:center; border: none;"><img src="./src/img/postman.png" alt="Postman" width="70px"></td>
+    <td style="text-align:center; border: none;"><img src="./src/img/vercel.png" alt="Vercel" width="100px"></td>
+    <td style="text-align:center; border: none;"><img src="./src/img/vsc.png" alt="Visual Studio Code" width="70px"></td>
+  </tr>
+  <tr>
+    <td style="text-align:center; border: none;">BCrypt</td>
+    <td style="text-align:center; border: none;">Faker</td>
+    <td style="text-align:center; border: none;">Postman</td>
+    <td style="text-align:center; border: none;">Vercel</td>
+    <td style="text-align:center; border: none;">Visual Studio Code</td>
+  </tr>
+  <tr>
+    <td style="text-align:center; border: none;"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="text-align:center; border: none;"></td>
+  </tr>
+  <tr>
+    <td style="text-align:center; border: none;"></td>
+    <td style="text-align:center; border: none;"></td>
+    <td style="text-align:center; border: none;"><img src="./src/img/git.png" alt="Git Lab" width="70px"></td>
+    <td style="text-align:center; border: none;"></td>
+    <td style="text-align:center; border: none;"></td>
+  </tr>
+  <tr>
+    <td style="text-align:center; border: none;"></td>
+    <td style="text-align:center; border: none;"></td>
+    <td style="text-align:center; border: none;">Git Lab</td>
+    <td style="text-align:center; border: none;"></td>
+    <td style="text-align:center; border: none;"></td>
+  </tr>
+</table>
 
-| <img src="./src/img/jwt.png" alt="JsonWebToken" width="150px" align="center"> | <img src="./src/img/bcrypt.jpg" alt="BCrypt" width="150px" align="center"> | <img src="./src/img/faker.jpg" alt="Faker" width="150px" align="center"> | <img src="./src/img/postman.png" alt="Postman" width="150px" align="center"> |
-|:---:|:---:|:---:|:---:|
-| JsonWebToken | BCrypt | Faker | Postman |
-
-| <img src="./src/img/vercel.png" alt="Vercel" width="150px" align="center"> | <img src="./src/img/vsc.png" alt="Visual Studio Code" width="150px" align="center"> | <img src="./src/img/git.png" alt="Git Lab" width="150px" align="center"> |
-|:---:|:---:|:---:|
-| Vercel | Visual Studio Code | Git Lab |
 
 
 
