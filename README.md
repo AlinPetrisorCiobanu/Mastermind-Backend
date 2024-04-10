@@ -27,6 +27,7 @@ Esta API gestiona la información básica de los usuarios del juego MasterMind. 
 ## Tecnologías - Bibliotecas - Herramientas 🛠️
 Aquí se incluyen las tecnologías, bibliotecas y herramientas utilizadas en el proyecto.
 
+<br>
 
 <table style="width:100%; border-collapse: collapse;">
   <tr>
