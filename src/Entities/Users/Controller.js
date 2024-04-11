@@ -40,7 +40,7 @@ export const register = async (data) => {
 }
 
 export const login = async (data) => {
-
+    console.log(data)
   const user_exist = await User.findOne({ $or: [{ email: data.email }, { nickname: data.nickname }] });
   if (!user_exist) throw new Error('EMAIL_PASSWORD')
   if (user_exist.is_active === false) throw new Error('DELETED')
