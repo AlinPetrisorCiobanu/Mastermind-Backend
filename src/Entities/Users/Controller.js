@@ -1,4 +1,4 @@
-import { validateDate, validateEmail, validateLastName, validateName, validateNickname, validatePassword, validatePhone } from "../../Utils/Validator.js";
+import { validateEmail, validateLastName, validateName, validateNickname, validatePassword } from "../../Utils/Validator.js";
 import User from "./Modelo.js";
 import CONFIDENCE from "../../Config/Config_Conexion.js";
 import bcrypt from 'bcryptjs'
