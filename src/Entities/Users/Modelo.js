@@ -15,17 +15,6 @@ export const UserSchema = new Schema({
         minlength: 2,
         maxlength: 80
         },
-    date: {
-        type : String,
-        
-        },
-    phone: {
-        type : Number,
-        require : true,
-        unique : true,
-        minlength:5,
-        maxlength:20
-        },
     email: {
         type : String,
         require : true,
