@@ -11,7 +11,7 @@ export const register = async (data) => {
   const email_exist = await User.findOne({ email: data.email })
   const nickname_exist = await User.findOne({ nickname: data.nickname })
 
-  if (phone_exist || email_exist || nickname_exist) throw new Error('ALLREADY_EXIST')
+  if (email_exist || nickname_exist) throw new Error('ALLREADY_EXIST')
 
   if (!validateEmail(data.email)) throw new Error('INVALID_CREDENTIALS_EMAIL')
   if (!validatePassword(data.password)) throw new Error('INVALID_CREDENTIALS_PASSWORD')
