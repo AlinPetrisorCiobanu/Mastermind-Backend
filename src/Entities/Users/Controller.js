@@ -6,9 +6,8 @@ import jwt from 'jsonwebtoken'
 
 export const register = async (data) => {
  
-  if (!data.name || !data.last_name || !data.date || !data.phone || !data.email || !data.nickname || !data.password) throw new Error('MISSING_DATA')
+  if (!data.name || !data.last_name || !data.email || !data.nickname || !data.password) throw new Error('MISSING_DATA')
 
-  const phone_exist = await User.findOne({ phone: data.phone })
   const email_exist = await User.findOne({ email: data.email })
   const nickname_exist = await User.findOne({ nickname: data.nickname })
 
