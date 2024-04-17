@@ -5,9 +5,8 @@ import CONFIDENCE from "../Config/Config_Conexion.js";
 const validateToken = (req, res, next) => {
   try {
     const token = req.header("Authorization");
-
+  
     if (!token) {
-      console.log(token);
       return res.status(401).json({ msg: 'NO AUTORIZADO' });
     }
 

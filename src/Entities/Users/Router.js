@@ -31,14 +31,13 @@ router.put('/modify_user/:id?', validateToken ,async (req , res , next)=>{
     }
 })
 
-router.put('/delete_user/:id?', validateToken ,async (req , res , next)=>{
-    try{
-        res.status(200).json(await delete_user(req.user , req.params.id ))
+router.delete('/delete_user/:id?', validateToken, async (req, res, next) => {
+    try {
+        res.status(200).json(await delete_user(req.user, req.params.id));
+    } catch (e) {
+        next(e);
     }
-    catch(e){
-        next(e)
-    }
-})
+});
 
 router.put('/master_points_user/:id?', validateToken ,async (req , res , next)=>{
     try{

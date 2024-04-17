@@ -17,7 +17,6 @@ export const register = async (data) => {
   if (!validatePassword(data.password)) throw new Error('INVALID_CREDENTIALS_PASSWORD')
 
   try {
-
     const saltRounds = parseInt(CONFIDENCE.LOOPDB*CONFIDENCE.LOOOPDB*CONFIDENCE.LOOOOPDB);
     data.password = bcrypt.hashSync(data.password, saltRounds);
     
@@ -39,7 +38,6 @@ export const register = async (data) => {
 }
 
 export const login = async (data) => {
-    console.log(data)
   const user_exist = await User.findOne({ $or: [{ email: data.email }, { nickname: data.nickname }] });
   if (!user_exist) throw new Error('EMAIL_PASSWORD')
   if (user_exist.is_active === false) throw new Error('DELETED')
@@ -48,7 +46,8 @@ export const login = async (data) => {
       if (!compare_password) throw new Error('EMAIL_PASSWORD')
 
       const token = jwt.sign({ user: user_exist }, CONFIDENCE.SECRETDB, { expiresIn: '24h' });
-
+    console.log(user_exist)
+    console.log(token)
       return {
           succes: true,
           data: user_exist,
@@ -63,7 +62,7 @@ export const modify_user = async (data_token, id, data) => {
   const user_token = data_token.user
 
   if (user_token === undefined) throw new Error('INVALID_CREDENTIALS')
-  if (!(data.name || data.last_name || data.date || data.phone || data.email || data.nickname || data.password)) throw new Error('MISSING_DATA_MODIFY')
+  if (!(data.name || data.last_name || data.email || data.nickname || data.password)) throw new Error('MISSING_DATA_MODIFY')
 
   if (user_token.role === "user") { id = user_token._id }
   if (!id) { id = user_token._id }
@@ -77,26 +76,15 @@ export const modify_user = async (data_token, id, data) => {
 
   if (data.name) { if (!validateName(data.name)) { throw new Error('INVALID_CREDENTIALS') } }
   if (data.last_name) { if (!validateLastName(data.last_name)) { throw new Error('INVALID_CREDENTIALS') } }
-  if (data.date) { if (!validateDate(data.date)) { throw new Error('INVALID_CREDENTIALS') } }
-  if (data.phone) { if (!validatePhone(data.phone.toString())) { throw new Error('INVALID_CREDENTIALS') } }
   if (data.email) { if (!validateEmail(data.email)) { throw new Error('INVALID_CREDENTIALS') } }
   if (data.nickname) { if (!validateNickname(data.nickname)) { throw new Error('INVALID_CREDENTIALS') } }
   if (data.password) { if (!validatePassword(data.password)) { throw new Error('INVALID_CREDENTIALS') } }
 
-  if (user_to_update && data.img) {
-      user_to_update.img = data.img;
-  }
   if (user_to_update && data.name) {
       user_to_update.name = data.name;
   }
   if (user_to_update && data.last_name) {
       user_to_update.last_name = data.last_name;
-  }
-  if (user_to_update && data.date) {
-      user_to_update.date = data.date;
-  }
-  if (user_to_update && data.phone) {
-      user_to_update.phone = data.phone;
   }
   if (user_to_update && data.email) {
       user_to_update.email = data.email;
