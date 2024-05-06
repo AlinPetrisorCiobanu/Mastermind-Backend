@@ -45,9 +45,7 @@ export const login = async (data) => {
       const compare_password = bcrypt.compareSync(data.password, user_exist.password)
       if (!compare_password) throw new Error('EMAIL_PASSWORD')
 
-      const token = jwt.sign({ user: user_exist }, CONFIDENCE.SECRETDB, { expiresIn: '24h' });
-    console.log(user_exist)
-    console.log(token)
+      const token = jwt.sign({ user: user_exist }, CONFIDENCE.SECRETDB, { expiresIn: '12h' });
       return {
           succes: true,
           data: user_exist,
@@ -234,7 +232,7 @@ export const list_users = async (data_token , page_params ) => {
   const user_token = data_token.user
 
   let page = page_params ? parseFloat(page_params) : 1
-  const pageSize = 1;
+  const pageSize = 10;
 
   const options = {
       page,

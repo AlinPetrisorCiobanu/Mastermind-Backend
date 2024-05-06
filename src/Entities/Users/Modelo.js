@@ -1,6 +1,5 @@
 import {model,Schema} from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
-import { type } from "os";
 
 export const UserSchema = new Schema({
     name : {
@@ -32,7 +31,7 @@ export const UserSchema = new Schema({
     role:{
         type:String,
         default : "user",
-        enum : ["user","admin","super_admin"]
+        enum : ["guest","user","admin","super_admin"]
     },
     is_active:{
         type:Boolean,
