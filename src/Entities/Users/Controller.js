@@ -122,7 +122,6 @@ export const modify_user = async (data_token, id, data) => {
       }
 
   } catch (err) {
-    console.log(err)
       throw new Error('BAD_REQUEST')
   }
 }
@@ -232,7 +231,7 @@ export const list_users = async (data_token , page_params ) => {
   const user_token = data_token.user
 
   let page = page_params ? parseFloat(page_params) : 1
-  const pageSize = 10;
+  const pageSize = 4;
 
   const options = {
       page,

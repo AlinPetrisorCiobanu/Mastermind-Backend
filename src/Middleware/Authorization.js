@@ -19,10 +19,9 @@ const validateToken = (req, res, next) => {
     req.user = jwt.verify(t, CONFIDENCE.SECRETDB);
     next();
   } catch (error) {
-    if (error instanceof jwt.JsonWebTokenError) {
+
       return res.status(403).json({ error: "Token inválido" });
-    }
-    next(error);
+
   }
 };
 

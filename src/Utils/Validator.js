@@ -21,6 +21,6 @@ export const validateNickname = (nickname) => {
 };
 
 export const validatePassword = (password) => {
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()-_=+\\|[\]{};:'",.<>/?]).{6,15}$/;
+    const passwordRegex = /^(?=.*\d)(?=.*[A-Z])[A-Za-z\d]{5,15}$/;
     return passwordRegex.test(password);
 };
